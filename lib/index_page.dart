@@ -22,7 +22,7 @@ class IndexPage extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () {
-                Navigator.of(context).pushNamed(AppRoutes.OCORRENCIA);
+                Navigator.of(context).pushNamed(AppRoutes.LISTAOCORRENCIA);
               },
               child: Text('Lista de ocorrencias'),
             ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ihcproject/ocorrencias/lista_ocorrencia_page.dart';
 
 import 'cadastrar/cadastrar_ocorrencia_page.dart';
 import 'index_page.dart';
@@ -19,7 +20,8 @@ class MyApp extends StatelessWidget {
       routes: {
         AppRoutes.CADASTRAROCORRENCIA: (context) =>
             const CadastrarOcorrenciaPage(),
-        AppRoutes.OCORRENCIA: (context) => const OcorrenciaPage(),
+        // AppRoutes.OCORRENCIA: (context) => OcorrenciaPage(),
+        AppRoutes.LISTAOCORRENCIA: (context) => const ListaOcorrenciaPage(),
       },
     );
   }

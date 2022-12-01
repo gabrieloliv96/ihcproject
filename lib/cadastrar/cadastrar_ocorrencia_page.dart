@@ -8,10 +8,34 @@ class CadastrarOcorrenciaPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-      body: Center(
-        child: Text('Ocorrencia cadastrar'),
-      ),
-    );
+        appBar: AppBar(),
+        body: SingleChildScrollView(
+          child: Form(
+            child: Column(
+              children: [
+                TextFormField(
+                  decoration: const InputDecoration(
+                    label: Text('Nome do denunciante'),
+                  ),
+                ),
+                TextFormField(
+                  decoration: const InputDecoration(
+                    label: Text('Endereço'),
+                  ),
+                ),
+                TextFormField(
+                  decoration: const InputDecoration(
+                    label: Text('Nome da vítima'),
+                  ),
+                ),
+                TextFormField(
+                  decoration: const InputDecoration(
+                    label: Text('Descrição do caso'),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ));
   }
 }
