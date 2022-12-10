@@ -27,6 +27,9 @@ class _ListaOcorrenciaPageState extends State<ListaOcorrenciaPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Lista de ocorrencias'),
+      ),
       body: FutureBuilder(
         builder: (context, snapshot) => ListView.builder(
           itemCount: ocorrencias.length,

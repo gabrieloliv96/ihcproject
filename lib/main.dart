@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ihcproject/login/login_page.dart';
 import 'package:ihcproject/ocorrencias/lista_ocorrencia_page.dart';
 
 import 'cadastrar/cadastrar_ocorrencia_page.dart';
@@ -11,13 +12,16 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     // ignore: prefer_const_constructors
     return MaterialApp(
-      home: IndexPage(),
+      home: const LoginPage(),
       // initialRoute: '/',
       routes: {
+        AppRoutes.INDEX: (context) => const IndexPage(),
         AppRoutes.CADASTRAROCORRENCIA: (context) =>
             const CadastrarOcorrenciaPage(),
         // AppRoutes.OCORRENCIA: (context) => OcorrenciaPage(),
