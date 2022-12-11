@@ -83,7 +83,7 @@ class _TextFormLoginWidgetState extends State<TextFormLoginWidget> {
             : IconButton(
                 icon: Icon(
                   _obscureText ? Icons.visibility : Icons.visibility_off,
-                  color: Colors.blue.shade900,
+                  color: Colors.black,
                 ),
                 onPressed: _toggle,
               ),

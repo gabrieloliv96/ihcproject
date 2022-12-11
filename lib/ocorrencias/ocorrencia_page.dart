@@ -25,7 +25,11 @@ class _OcorrenciaPageState extends State<OcorrenciaPage> {
     int upperBound = 6;
 
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Text(widget.ocorrencia.nome),
+        centerTitle: true,
+        backgroundColor: Colors.black,
+      ),
       body: Column(
         children: [
           IconStepper(
@@ -47,14 +51,45 @@ class _OcorrenciaPageState extends State<OcorrenciaPage> {
           ),
           // header(),
           Expanded(
-            child: FittedBox(
-              child: Center(
-                child: Column(
-                  children: [
-                    Text(widget.ocorrencia.nome),
-                    Text('${widget.ocorrencia.observacao}'),
-                  ],
-                ),
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                children: [
+                  Image.asset(
+                    'assets/mapa.jpg',
+                    // height: 1250,
+                    // width: 150,
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.only(top: 25.0),
+                    child: Text(
+                      'Detalhes',
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  Row(
+                    children: [
+                      Text(
+                        "Vitima: ${widget.ocorrencia.nome}",
+                        style: const TextStyle(fontSize: 20),
+                      ),
+                      // Text(widget.ocorrencia.nome),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: Text(
+                          'Observação: ${widget.ocorrencia.observacao}',
+                          style: const TextStyle(fontSize: 20),
+                          maxLines: null,
+                          softWrap: true,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
               ),
             ),
           ),

@@ -19,9 +19,22 @@ class _ListaOcorrenciaPageState extends State<ListaOcorrenciaPage> {
   // }
 
   List<OcorrenciaModel> ocorrencias = [
-    OcorrenciaModel(id: 0, status: 0, nome: 'Jonas'),
-    OcorrenciaModel(id: 1, status: 1, nome: 'Cleber'),
-    OcorrenciaModel(id: 2, status: 2, nome: 'Cleide'),
+    OcorrenciaModel(
+        id: 0,
+        status: 0,
+        nome: 'Jonas',
+        observacao: 'Vítima sendo roubada pelo filho.'),
+    OcorrenciaModel(
+        id: 1,
+        status: 1,
+        nome: 'Cleber',
+        observacao: 'Vítima em estado vegetativo.'),
+    OcorrenciaModel(
+      id: 2,
+      status: 2,
+      nome: 'Cleide',
+      observacao: 'Vítima não encontrada.',
+    ),
   ];
 
   @override
@@ -29,6 +42,7 @@ class _ListaOcorrenciaPageState extends State<ListaOcorrenciaPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Lista de ocorrencias'),
+        backgroundColor: Colors.black,
       ),
       body: FutureBuilder(
         builder: (context, snapshot) => ListView.builder(
@@ -36,6 +50,7 @@ class _ListaOcorrenciaPageState extends State<ListaOcorrenciaPage> {
           itemBuilder: (context, index) {
             return Card(
               child: ListTile(
+                trailing: const Icon(Icons.delete),
                 title: Text(ocorrencias[index].nome),
                 onTap: () => Navigator.of(context).push(
                   MaterialPageRoute(

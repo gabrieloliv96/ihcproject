@@ -66,12 +66,12 @@ class _LoginPageState extends State<LoginPage> {
             top: MediaQuery.of(context).size.height * 0.01,
             right: 15,
             left: 15),
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage("assets/backgroundapp.png"),
-            fit: BoxFit.cover,
-          ),
-        ),
+        // decoration: const BoxDecoration(
+        //   image: DecorationImage(
+        //     image: AssetImage("assets/backgroundapp.png"),
+        //     fit: BoxFit.cover,
+        //   ),
+        // ),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -87,6 +87,11 @@ class _LoginPageState extends State<LoginPage> {
               // ),
               const SizedBox(
                 height: 10,
+              ),
+              Image.asset(
+                'assets/logo1.jpg',
+                height: 150,
+                width: 150,
               ),
               Padding(
                 padding: const EdgeInsets.only(
@@ -116,10 +121,10 @@ class _LoginPageState extends State<LoginPage> {
                         },
                         icon: Icon(
                           Icons.person_pin_circle_rounded,
-                          color: Colors.blue.shade900,
+                          color: Colors.black,
                           size: 27,
                         ),
-                        cor: Colors.blue.shade900,
+                        cor: Colors.black,
                         label: 'Email',
                         textInput: TextInputType.emailAddress,
                         // onChangeController: _controller.setLogin,
@@ -153,10 +158,10 @@ class _LoginPageState extends State<LoginPage> {
                           return null;
                         },
                         controller: _passController,
-                        cor: Colors.blue.shade900,
+                        cor: Colors.black,
                         icon: Icon(
                           Icons.vpn_key_rounded,
-                          color: Colors.blue.shade900,
+                          color: Colors.black,
                         ),
                         label: 'Senha',
                         isObscure: true,
@@ -181,20 +186,19 @@ class _LoginPageState extends State<LoginPage> {
               Row(
                 children: [
                   Theme(
-                    data:
-                        ThemeData(unselectedWidgetColor: Colors.blue.shade900),
+                    data: ThemeData(unselectedWidgetColor: Colors.black),
                     child: Checkbox(
                         value: _manterConectado,
-                        activeColor: Colors.blue.shade900,
+                        activeColor: Colors.black,
                         onChanged: (newValue) {
                           setState(() {
                             _manterConectado = newValue!;
                           });
                         }),
                   ),
-                  Text(
+                  const Text(
                     'Mantenha-me conectado',
-                    style: TextStyle(color: Colors.blue.shade900),
+                    style: TextStyle(color: Colors.black),
                   ),
                   const SizedBox(
                     width: 50,
@@ -239,21 +243,22 @@ class _LoginPageState extends State<LoginPage> {
                   // Navigator.of(context).pushNamed(AppRoutes.REDEFINIRSENHA);
                 },
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 10),
+              const Padding(
+                padding: EdgeInsets.symmetric(vertical: 10),
                 child: Divider(
-                  color: Colors.blue.shade900,
+                  color: Colors.black,
                   thickness: 1.2,
                 ),
               ),
               ElevatedButton(
                 style: ButtonStyle(
-                    shape: MaterialStateProperty.all(const StadiumBorder()),
-                    minimumSize:
-                        MaterialStateProperty.all(const Size.fromHeight(55)),
-                    backgroundColor: MaterialStateProperty.all(
-                      const Color(0xffe69012),
-                    )),
+                  shape: MaterialStateProperty.all(const StadiumBorder()),
+                  minimumSize:
+                      MaterialStateProperty.all(const Size.fromHeight(55)),
+                  backgroundColor: MaterialStateProperty.all(
+                    const Color(0xffe69012),
+                  ),
+                ),
                 child: const Text(
                   'Primeiro acesso',
                   style: TextStyle(fontSize: 18, color: Colors.white),
