@@ -13,4 +13,13 @@ class OcorrenciaModel {
     required this.nome,
     this.observacao,
   });
+
+  Map<String, dynamic> toMap() {
+    return <String, dynamic>{
+      'id': id,
+      'status': status,
+      'nome': nome,
+      'observacao': observacao,
+    };
+  }
 }
