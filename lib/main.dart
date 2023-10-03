@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
         AppRoutes.INDEX: (context) => const IndexPage(),
         AppRoutes.CADASTRAROCORRENCIA: (context) =>
             const CadastrarOcorrenciaPage(),
-        // AppRoutes.OCORRENCIA: (context) => OcorrenciaPage(),
+        AppRoutes.OCORRENCIA: (context) => OcorrenciaPage(),
         AppRoutes.LISTAOCORRENCIA: (context) => const ListaOcorrenciaPage(),
       },
     );
